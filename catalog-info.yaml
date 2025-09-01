@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-pjwduudg-gitops
+  description: This is GitOps manifest for python-pjwduudg   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-pjwduudg
+    backstage.io/kubernetes-id: python-pjwduudg 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhtap-test-org/python-pjwduudg-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhtap-test-org.python-pjwduudg-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-pjwduudg
